@@ -1,0 +1,30 @@
+qhli@qhlitekiMacBook-Pro:~/src/test1 (master)$ git add step.txt
+qhli@qhlitekiMacBook-Pro:~/src/test1 (master)$ git commit -m "本地master上第一次提交step.txt"
+[master (root-commit) 2b53dad] 本地master上第一次提交step.txt
+ 1 file changed, 10 insertions(+)
+  create mode 100644 step.txt
+  qhli@qhlitekiMacBook-Pro:~/src/test1 (master)$ mkdir d0
+  qhli@qhlitekiMacBook-Pro:~/src/test1 (master)$ git add d0/
+  qhli@qhlitekiMacBook-Pro:~/src/test1 (master)$ git commit -m "本地master上第二次提交，添加一个空目录d0"
+  On branch master
+  nothing to commit, working tree clean
+  qhli@qhlitekiMacBook-Pro:~/src/test1 (master)$ git status
+  On branch master
+  nothing to commit, working tree clean
+  qhli@qhlitekiMacBook-Pro:~/src/test1 (master)$ git commit -m "本地master上第二次提交添加一个空目录d0"
+  On branch master
+  nothing to commit, working tree clean
+  qhli@qhlitekiMacBook-Pro:~/src/test1 (master)$ mkdir d1
+  qhli@qhlitekiMacBook-Pro:~/src/test1 (master)$ cd d1
+  qhli@qhlitekiMacBook-Pro:~/src/test1/d1 (master)$ vi hello
+  qhli@qhlitekiMacBook-Pro:~/src/test1/d1 (master)$ cd ..
+  qhli@qhlitekiMacBook-Pro:~/src/test1 (master)$ ls
+  d0        d1        step.txt
+  qhli@qhlitekiMacBook-Pro:~/src/test1 (master)$ git add d1/
+  qhli@qhlitekiMacBook-Pro:~/src/test1 (master)$ git commit -m "本地master上第三次提交添加一个目录d1和其下文件hello"
+  [master e531bbb] 本地master上第三次提交添加一个目录d1和其下文件hello
+   1 file changed, 1 insertion(+)
+    create mode 100644 d1/hello
+    qhli@qhlitekiMacBook-Pro:~/src/test1 (master)$ git log --oneline --decorate --graph --all
+    * e531bbb (HEAD -> master) 本地master上第三次提交添加一个目录d1和其下文件hello
+    * 2b53dad 本地master上第一次提交step.txt
