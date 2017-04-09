@@ -1,7 +1,7 @@
 1
 以前有一个账号xxx,并且在github中作为免密配置，
 现在新建一个账号liqxhx,
-本想练习本地仓库关联远程仓库，推荐本地内容到远程
+本想练习本地仓库关联远程仓库，推送本地内容到远程
 结果报下面错：
 remote: Permission to liqxhx/test1.git denied to xxx.
 fatal: unable to access 'https://github.com/liqxhx/test1.git/': The requested URL returned error: 403
@@ -9,7 +9,7 @@ fatal: unable to access 'https://github.com/liqxhx/test1.git/': The requested UR
 ref:
 http://www.jianshu.com/p/12badb7e6c10
 ---------------
-具体步骤
+具体步骤:
 1)
 删除~/.ssh目录
 重新生成密钥对，并将公钥复制到github的ssh keys中
