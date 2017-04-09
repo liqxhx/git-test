@@ -1,0 +1,15 @@
+ssh-keygen -t rsa -C liqxhx@gmail.com
+home/vagrant/.ssh/id_rsa_liqxhx_github
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa_liqxhx_github
+
+vi ~/.ssh/config
+
+Host github_liqxhx
+HostName github.com
+User git
+IdentityFile ~/.ssh/id_rsa_liqxhx_github
+
+chmod 644 ~/.ssh/config
+
+ssh -T git@github.com
