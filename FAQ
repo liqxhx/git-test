@@ -1,0 +1,33 @@
+1
+以前有一个账号xxx,并且在github中作为免密配置，
+现在新建一个账号liqxhx,
+本想练习本地仓库关联远程仓库，推荐本地内容到远程
+结果报下面错：
+remote: Permission to liqxhx/test1.git denied to xxx.
+fatal: unable to access 'https://github.com/liqxhx/test1.git/': The requested URL returned error: 403
+---------------
+ref:
+http://www.jianshu.com/p/12badb7e6c10
+---------------
+具体步骤
+1)
+删除~/.ssh目录
+重新生成密钥对，并将公钥复制到github的ssh keys中
+2)
+创建.ssh/config(用户级)配置文件,系统的配置文件为/etc/ssh/ssh_config
+vi .ssh/config
+Host github_liqxhx
+HostName github.com
+User git
+IdentityFile ~/.ssh/id_rsa_liqxhx_github
+配置项解释可以参考:http://daemon369.github.io/ssh/2015/03/21/using-ssh-config-file
+下面测试
+ssh -T github_liqxhx
+3)
+cd ~src/test1
+git remote -v
+git remote set-url origin  github_liqxhx:liqxhx/test1.git
+git remote -v
+4)
+重新推送成功
+git push -u origin master
